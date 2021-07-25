@@ -7,10 +7,10 @@
     "username": "docker",
     "password": "docker",
     "database": "ibm_call_for_code",
-    "entities": ["./dist/modules/**/infra/typeorm/entities/*.js"],
-    "migrations": ["./dist/shared/infra/typeorm/migrations/*.js"],
+    "entities": ["./src/models/*.ts"],
+    "migrations": [".src/database/migration/*.ts"],
     "cli": {
-      "migrationsDir": "./dist/shared/infra/typeorm/migrations"
+      "migrationsDir": "./src/database/migrations"
     }
   }
 ]
