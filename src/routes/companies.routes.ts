@@ -1,9 +1,8 @@
-import AppError from 'errors/AppError';
-import { NextFunction, Request, Response, Router } from 'express';
+import { Router } from 'express';
 import CompanyRepository from 'repositories/companiesRepository';
 import CreateCompanyService from 'services/CreateCompanyService';
-import DeleteCompanyService from 'services/DeleteCompany';
-import UpdateCompanyService from 'services/UpdateCompany';
+import DeleteCompanyService from 'services/DeleteCompanyService';
+import UpdateCompanyService from 'services/UpdateCompanyService';
 import { getCustomRepository } from 'typeorm';
 
 const companiesRoutes = Router();
