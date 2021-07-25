@@ -7,10 +7,10 @@
     "username": "root",
     "password": "root",
     "database": "ibm_call_for_code",
-    "entities": ["./src/models/*.ts"],
-    "migrations": ["./src/database/migrations/*.ts"],
+    "entities": ["./build/models/*.ts"],
+    "migrations": ["./build/database/migrations/*.ts"],
     "cli": {
-      "migrationsDir": "./src/database/migrations"
+      "migrationsDir": "./build/database/migrations"
     }
   }
 ]

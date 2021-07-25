@@ -1,0 +1,5 @@
+---
+applications:
+  - name: Eco Location
+    random-route: false
+    memory: 256M
