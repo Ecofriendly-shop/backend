@@ -43,11 +43,40 @@ productsRoutes.post('/', async (req, res) => {
 // READ
 productsRoutes.get('/', async (req, res) => {
   try {
+    const { q, is_vegan, is_ecologic, have_gluten, have_lactose } = req.query;
     const productsRepository = getCustomRepository(ProductRepository);
 
-    const products = await productsRepository.find();
+    const products = await productsRepository.findByProductNameAndFilters({
+      key_name: String(q),
+      filters: {
+        is_vegan:
+          is_vegan === 'true' ? true : is_vegan === 'false' ? false : undefined,
+        is_ecologic:
+          is_ecologic === 'true'
+            ? true
+            : is_ecologic === 'false'
+            ? false
+            : undefined,
+        have_gluten:
+          have_gluten === 'true'
+            ? true
+            : have_gluten === 'false'
+            ? false
+            : undefined,
+        have_lactose:
+          have_lactose === 'true'
+            ? true
+            : have_lactose === 'false'
+            ? false
+            : undefined,
+      },
+    });
 
     return res.json(products);
+
+    // const products = await productsRepository.find();
+
+    // return res.json(products);
   } catch (err) {
     return res.status(400).json({ error: err.message });
   }
