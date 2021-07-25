@@ -4,11 +4,11 @@
     "type": "postgres",
     "host": "localhost",
     "port": 5432,
-    "username": "docker",
-    "password": "docker",
+    "username": "root",
+    "password": "root",
     "database": "ibm_call_for_code",
     "entities": ["./src/models/*.ts"],
-    "migrations": [".src/database/migration/*.ts"],
+    "migrations": ["./src/database/migrations/*.ts"],
     "cli": {
       "migrationsDir": "./src/database/migrations"
     }
